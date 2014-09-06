@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A329f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TSPItem" representedClassName="TSPItem" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="done" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TSPUser" inverseName="items" inverseEntity="TSPUser" syncable="YES"/>
+    </entity>
+    <entity name="TSPUser" representedClassName="TSPUser" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TSPItem" inverseName="user" inverseEntity="TSPItem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TSPItem" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="TSPUser" positionX="-54" positionY="18" width="128" height="73"/>
+    </elements>
+</model>
